@@ -2,14 +2,15 @@
 <html>
 <body>
 
-<form action="/username/" method="post">
+<form action="/rps/" method="post">
   <label for="team_name">Enter name: </label>
-  <input
-    id="team_name"
+  <input 
+    id="user_name"
     type="text"
     name="name_field"
-    value="Default name for team." />
+    value="Default name" />
   <input type="submit" value="OK" />
 </form>
+<script>document.getElementById("user_name").value="banana"</script>
 </body>
 </html>

@@ -17,6 +17,15 @@
         height: fit-content;
         border: 5px solid rgb(224, 85, 85); 
       }
+    .challenge{
+      display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        border: 5px solid rgb(224, 85, 85); 
+        
+    }
     .centerRow{
       display: flex;
         justify-content: center;
@@ -53,8 +62,24 @@
 
 <div class="center">
 <h1>users:</h1>
-<p><%=users%></p>
+<p><%=locals.users%></p>
 <p>your username is <%=thisUser%></p>
+<form action="/rps/challenge" method="post">
+    <select name="challengers" id="challengers">
+        <%challengers.forEach(challenger => { %>
+          <%if(challenger!=thisUser){%>
+            <option value="<%= challenger %>">
+                <%=challenger %>
+            </option>
+       <%}
+            
+        }) %>
+    </select>
+  <input type="submit" value="challenge" />
+</form>
+<button class="challenge" draggable="true">accept</button>
 </div>
+
 </body>
+
 </html>
